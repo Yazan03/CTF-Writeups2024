@@ -2,7 +2,7 @@
 ***First challenge :***
 
 
-![image](https://github.com/Yazan03/Priv/assets/94278827/3593cfd4-76b4-4a8b-9652-a0a1f1255db0)
+<img src="https://github.com/Yazan03/CTF-Writeups2024/blob/main/OSINT/IrisCTF/assets/1.png">
 
 The download file has this picture.
 
