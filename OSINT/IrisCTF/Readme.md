@@ -108,8 +108,7 @@ We are given a hash, and the flag is the cleartext of the password. The goal is 
 
 Her mom's date is from her Facebook: 
 
-![image](https://github.com/Yazan03/Priv/assets/94278827/d4855dd3-1066-420d-baa3-f1b6ecf368fc)
-
+<img src="https://github.com/Yazan03/CTF-Writeups2024/blob/main/OSINT/IrisCTF/assets/26.png">
 Then I made a script to generate all the combinations from her account and added more.
 
 ```py
