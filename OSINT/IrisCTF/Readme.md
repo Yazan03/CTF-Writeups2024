@@ -30,6 +30,10 @@ The flag : ***irisctf{zlata_ulicka_u_daliborky}***
 
 
 
+
+
+
+
 ***Second challenge :***
 
 ![image](https://github.com/Yazan03/Priv/assets/94278827/8fc87b0f-8b86-4949-8125-3a54c245a461)
@@ -46,6 +50,10 @@ One of the posts has the flag:
 
 
 ![image](https://github.com/Yazan03/Priv/assets/94278827/7a3d21a0-a27f-4ad0-8390-94adb065f46e)
+
+
+
+
 
 
 
@@ -91,6 +99,10 @@ Using Google Image, we will get the hospital name: ```Lenox Hill Hospital```
 Combined everything together to get the flag. 
 
 ![image](https://github.com/Yazan03/Priv/assets/94278827/5fcb1561-fe56-4e1e-833f-0a2d5ef03204)
+
+
+
+
 
 
 
