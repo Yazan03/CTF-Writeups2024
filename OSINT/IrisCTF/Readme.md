@@ -97,6 +97,8 @@ Combined everything together to get the flag.
 
 ***Last challenge :***
 
+With First blood !
+
 ![image](https://github.com/Yazan03/Priv/assets/94278827/9b0611bd-7779-4cc1-b334-f402219871a8)
 
 We are given a hash, and the flag is the cleartext of the password. The goal is to make a specific list for ```irirs```, Let's get back to her IG. We will notice some pisces we can get to help us:
