@@ -87,7 +87,7 @@ Using Google Image, we will get the hospital name: ```Lenox Hill Hospital```
 <img src="https://github.com/Yazan03/CTF-Writeups2024/blob/main/OSINT/IrisCTF/assets/19.png">
 Combined everything together to get the flag. 
 
-<img src="https://github.com/Yazan03/CTF-Writeups2024/blob/main/OSINT/IrisCTF/assets/20.png">
+
 
 
 
@@ -98,6 +98,8 @@ Combined everything together to get the flag.
 ***Last challenge :***
 
 With First blood !
+
+<img src="https://github.com/Yazan03/CTF-Writeups2024/blob/main/OSINT/IrisCTF/assets/20.png">
 
 <img src="https://github.com/Yazan03/CTF-Writeups2024/blob/main/OSINT/IrisCTF/assets/21.png">
 We are given a hash, and the flag is the cleartext of the password. The goal is to make a specific list for ```irirs```, Let's get back to her IG. We will notice some pisces we can get to help us:
