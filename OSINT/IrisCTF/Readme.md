@@ -86,7 +86,7 @@ Also, she is mentioned at some live events, one of which is her birthday date.
 <img src="https://github.com/Yazan03/CTF-Writeups2024/blob/main/OSINT/IrisCTF/assets/15.png">
 Also, there a post of the hospital's room:  
 
-<img src="https://github.com/Yazan03/CTF-Writeups2024/blob/main/OSINT/IrisCTF/assets/17.png">
+<img src="https://github.com/Yazan03/CTF-Writeups2024/blob/main/OSINT/IrisCTF/assets/16.png">
 
 Using Google Image, we will get the hospital name: (Lenox Hill Hospital)
 <img src="https://github.com/Yazan03/CTF-Writeups2024/blob/main/OSINT/IrisCTF/assets/18.png">
