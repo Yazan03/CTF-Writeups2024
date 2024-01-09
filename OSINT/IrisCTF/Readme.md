@@ -68,12 +68,13 @@ From followers of (michelangelo) IG :
 
 The username is iris stein and it has a LinkedIn account: 
 <img src="https://github.com/Yazan03/CTF-Writeups2024/blob/main/OSINT/IrisCTF/assets/11.png">
-<img src="https://github.com/Yazan03/CTF-Writeups2024/blob/main/OSINT/IrisCTF/assets/13.png">
+
 For the third question : ```Mountain Peak Hiring Agency```
 
-Then from the (michelangelo corning) Instagram: From his following, we get Iris's IG: 
 
 <img src="https://github.com/Yazan03/CTF-Writeups2024/blob/main/OSINT/IrisCTF/assets/14.png">
+
+<img src="https://github.com/Yazan03/CTF-Writeups2024/blob/main/OSINT/IrisCTF/assets/13.png">
 In one of her posts, she mentioned her mom.
 
 <img src="https://github.com/Yazan03/CTF-Writeups2024/blob/main/OSINT/IrisCTF/assets/15.png">
