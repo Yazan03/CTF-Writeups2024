@@ -62,12 +62,12 @@ One of the posts has the flag:
 We are given a link to a webpage; let's jump into it.
 
 <img src="https://github.com/Yazan03/CTF-Writeups2024/blob/main/OSINT/IrisCTF/assets/12.png">
-The username is ```iris stein``` and it has a LinkedIn account: 
+The username is iris stein and it has a LinkedIn account: 
 
 <img src="https://github.com/Yazan03/CTF-Writeups2024/blob/main/OSINT/IrisCTF/assets/13.png">
 For the third question : ```Mountain Peak Hiring Agency```
 
-Then from the ```michelangelo corning``` Instagram: From his following, we get Iris's IG: 
+Then from the (michelangelo corning) Instagram: From his following, we get Iris's IG: 
 
 <img src="https://github.com/Yazan03/CTF-Writeups2024/blob/main/OSINT/IrisCTF/assets/14.png">
 In one of her posts, she mentioned her mom.
@@ -79,10 +79,10 @@ Then I found her mom's Facebook account.
 Also, she is mentioned at some live events, one of which is her third birthday date.
 
 <img src="https://github.com/Yazan03/CTF-Writeups2024/blob/main/OSINT/IrisCTF/assets/17.png">
-So we got her age: ```27```, and we still want the hospital where Iris was born. If we clicked on Iris's birthday, she put a picture from the hospital. 
+So we got her age: (27) , and we still want the hospital where Iris was born. If we clicked on Iris's birthday, she put a picture from the hospital. 
 
 <img src="https://github.com/Yazan03/CTF-Writeups2024/blob/main/OSINT/IrisCTF/assets/18.png">
-Using Google Image, we will get the hospital name: ```Lenox Hill Hospital```
+Using Google Image, we will get the hospital name: (Lenox Hill Hospital)
 
 <img src="https://github.com/Yazan03/CTF-Writeups2024/blob/main/OSINT/IrisCTF/assets/19.png">
 Combined everything together to get the flag. 
@@ -102,7 +102,7 @@ With First blood !
 <img src="https://github.com/Yazan03/CTF-Writeups2024/blob/main/OSINT/IrisCTF/assets/20.png">
 
 <img src="https://github.com/Yazan03/CTF-Writeups2024/blob/main/OSINT/IrisCTF/assets/21.png">
-We are given a hash, and the flag is the cleartext of the password. The goal is to make a specific list for ```irirs```, Let's get back to her IG. We will notice some pisces we can get to help us:
+We are given a hash, and the flag is the cleartext of the password. The goal is to make a specific list for (irirs), Let's get back to her IG. We will notice some pisces we can get to help us:
 
 <img src="https://github.com/Yazan03/CTF-Writeups2024/blob/main/OSINT/IrisCTF/assets/22.png">
 <img src="https://github.com/Yazan03/CTF-Writeups2024/blob/main/OSINT/IrisCTF/assets/23.png">
