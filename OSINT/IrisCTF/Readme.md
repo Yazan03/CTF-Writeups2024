@@ -72,11 +72,11 @@ The username is iris stein and it has a LinkedIn account:
 For the third question : ```Mountain Peak Hiring Agency```
 
 
-<img src="https://github.com/Yazan03/CTF-Writeups2024/blob/main/OSINT/IrisCTF/assets/14.png">
+
 
 <img src="https://github.com/Yazan03/CTF-Writeups2024/blob/main/OSINT/IrisCTF/assets/13.png">
 In one of her posts, she mentioned her mom.
-
+<img src="https://github.com/Yazan03/CTF-Writeups2024/blob/main/OSINT/IrisCTF/assets/14.png">
 <img src="https://github.com/Yazan03/CTF-Writeups2024/blob/main/OSINT/IrisCTF/assets/15.png">
 Then I found her mom's Facebook account.
 
