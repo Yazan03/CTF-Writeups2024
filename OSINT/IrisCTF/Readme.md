@@ -78,12 +78,12 @@ In one of her posts, she mentioned her mom.
 
 Then I found her mom's Facebook account.
 <img src="https://github.com/Yazan03/CTF-Writeups2024/blob/main/OSINT/IrisCTF/assets/14.png">
-<img src="https://github.com/Yazan03/CTF-Writeups2024/blob/main/OSINT/IrisCTF/assets/15.png">
+
 
 
 <img src="https://github.com/Yazan03/CTF-Writeups2024/blob/main/OSINT/IrisCTF/assets/16.png">
-Also, she is mentioned at some live events, one of which is her third birthday date.
-
+Also, she is mentioned at some live events, one of which is her birthday date.
+<img src="https://github.com/Yazan03/CTF-Writeups2024/blob/main/OSINT/IrisCTF/assets/15.png">
 <img src="https://github.com/Yazan03/CTF-Writeups2024/blob/main/OSINT/IrisCTF/assets/17.png">
 So we got her age: (27) , and we still want the hospital where Iris was born. If we clicked on Iris's birthday, she put a picture from the hospital. 
 
