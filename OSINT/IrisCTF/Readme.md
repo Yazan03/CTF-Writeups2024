@@ -57,7 +57,7 @@ One of the posts has the flag:
 ========================================================================================================================
 
 ***Third challenge :***
-
+<img src="https://github.com/Yazan03/CTF-Writeups2024/blob/main/OSINT/IrisCTF/assets/third.png">
 
 We are given a link to a webpage; let's jump into it.
 <img src="https://github.com/Yazan03/CTF-Writeups2024/blob/main/OSINT/IrisCTF/assets/10.png">
