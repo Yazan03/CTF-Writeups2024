@@ -116,8 +116,8 @@ We are given a hash, and the flag is the cleartext of the password. The goal is 
 
 
 <img src="https://github.com/Yazan03/CTF-Writeups2024/blob/main/OSINT/IrisCTF/assets/22.png">
-<img src="https://github.com/Yazan03/CTF-Writeups2024/blob/main/OSINT/IrisCTF/assets/23.png">
-<img src="https://github.com/Yazan03/CTF-Writeups2024/blob/main/OSINT/IrisCTF/assets/24.png">
+<img src="https://github.com/Yazan03/CTF-Writeups2024/blob/main/OSINT/IrisCTF/assets/moomm.png">
+<img src="https://github.com/Yazan03/CTF-Writeups2024/blob/main/OSINT/IrisCTF/assets/Screenshot%202024-01-09%20184103.png">
 
 Her mom's date is from her Facebook: 
 
