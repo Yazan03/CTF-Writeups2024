@@ -73,12 +73,13 @@ For the third question : ```Mountain Peak Hiring Agency```
 
 
 
-
-<img src="https://github.com/Yazan03/CTF-Writeups2024/blob/main/OSINT/IrisCTF/assets/13.png">
 In one of her posts, she mentioned her mom.
+<img src="https://github.com/Yazan03/CTF-Writeups2024/blob/main/OSINT/IrisCTF/assets/13.png">
+
+Then I found her mom's Facebook account.
 <img src="https://github.com/Yazan03/CTF-Writeups2024/blob/main/OSINT/IrisCTF/assets/14.png">
 <img src="https://github.com/Yazan03/CTF-Writeups2024/blob/main/OSINT/IrisCTF/assets/15.png">
-Then I found her mom's Facebook account.
+
 
 <img src="https://github.com/Yazan03/CTF-Writeups2024/blob/main/OSINT/IrisCTF/assets/16.png">
 Also, she is mentioned at some live events, one of which is her third birthday date.
