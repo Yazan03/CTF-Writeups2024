@@ -90,8 +90,10 @@ Also, there a post of the hospital's room:
 
 Using Google Image, we will get the hospital name: (Lenox Hill Hospital)
 <img src="https://github.com/Yazan03/CTF-Writeups2024/blob/main/OSINT/IrisCTF/assets/18.png">
-<img src="https://github.com/Yazan03/CTF-Writeups2024/blob/main/OSINT/IrisCTF/assets/19.png">
+
 Combined everything together to get the flag. 
+<img src="https://github.com/Yazan03/CTF-Writeups2024/blob/main/OSINT/IrisCTF/assets/19.png">
+
 
 
 
