@@ -81,11 +81,11 @@ Then I found her mom's Facebook account.
 
 
 
-<img src="https://github.com/Yazan03/CTF-Writeups2024/blob/main/OSINT/IrisCTF/assets/16.png">
+
 Also, she is mentioned at some live events, one of which is her birthday date.
 <img src="https://github.com/Yazan03/CTF-Writeups2024/blob/main/OSINT/IrisCTF/assets/15.png">
 <img src="https://github.com/Yazan03/CTF-Writeups2024/blob/main/OSINT/IrisCTF/assets/17.png">
-So we got her age: (27) , and we still want the hospital where Iris was born. If we clicked on Iris's birthday, she put a picture from the hospital. 
+
 
 <img src="https://github.com/Yazan03/CTF-Writeups2024/blob/main/OSINT/IrisCTF/assets/18.png">
 Using Google Image, we will get the hospital name: (Lenox Hill Hospital)
