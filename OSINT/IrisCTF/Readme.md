@@ -84,6 +84,9 @@ Then I found her mom's Facebook account.
 
 Also, she is mentioned at some live events, one of which is her birthday date.
 <img src="https://github.com/Yazan03/CTF-Writeups2024/blob/main/OSINT/IrisCTF/assets/15.png">
+
+
+
 Also, there a post of the hospital's room:  
 
 <img src="https://github.com/Yazan03/CTF-Writeups2024/blob/main/OSINT/IrisCTF/assets/16.png">
