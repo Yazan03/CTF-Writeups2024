@@ -111,9 +111,9 @@ Combined everything together to get the flag.
 With First blood !
 
 <img src="https://github.com/Yazan03/CTF-Writeups2024/blob/main/OSINT/IrisCTF/assets/20.png">
-
-<img src="https://github.com/Yazan03/CTF-Writeups2024/blob/main/OSINT/IrisCTF/assets/21.png">
 We are given a hash, and the flag is the cleartext of the password. The goal is to make a specific list for (irirs), Let's get back to her IG. We will notice some pisces we can get to help us:
+<img src="https://github.com/Yazan03/CTF-Writeups2024/blob/main/OSINT/IrisCTF/assets/21.png">
+
 
 <img src="https://github.com/Yazan03/CTF-Writeups2024/blob/main/OSINT/IrisCTF/assets/22.png">
 <img src="https://github.com/Yazan03/CTF-Writeups2024/blob/main/OSINT/IrisCTF/assets/23.png">
