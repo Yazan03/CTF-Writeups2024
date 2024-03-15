@@ -14,3 +14,10 @@ In requirements.txt we can see that it's using an old version of JWT `python_jwt
 Let's open the Site now 
 <br></br>
 <img src="https://github.com/Yazan03/CTF-Writeups2024/blob/main/HTB_cyber_apocalypse/WEB/images/5.PNG">
+<br></br>
+If we tried to generate a token using `/api/v1/get_ticket` it will return `403` because of the configurations in ``haproxy.cfg``
+
+```http-request deny if { path_beg,url_dec -i /api/v1/get_ticket }```
+
+
+
