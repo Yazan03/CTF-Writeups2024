@@ -30,10 +30,10 @@ Werkzeug==2.2.2
 ```
 After reading the sessions.py from `https://github.com/pallets-eco/flask-session/blob/main/src/flask_session/sessions.py`
 
-I found that it use the `cPickle` which is vulnerable to deserialization attack, After a bit of googling about memcached and cPickle i came accross this 
+I found that it use the `cPickle` which is vulnerable to deserialization attack, After a bit of googling about memcached and cPickle i came accross this as POC of the exploit
 `https://btlfry.gitlab.io/notes/posts/memcached-command-injections-at-pylibmc/`
 
-Which i used it as POC.
+
 <br></br>
 ```py
 from requests import *
