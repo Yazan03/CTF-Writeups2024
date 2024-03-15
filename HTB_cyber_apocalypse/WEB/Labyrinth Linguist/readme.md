@@ -46,4 +46,5 @@ data={"text":injection}
 pattern = r'HTB\{.*\}'
 r=post(url,data=data)
 flag = re.findall(pattern, r.text)
-print(flag)```
+print(flag)
+```
