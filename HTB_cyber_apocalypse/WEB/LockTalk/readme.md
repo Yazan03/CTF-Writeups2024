@@ -19,5 +19,9 @@ If we tried to generate a token using `/api/v1/get_ticket` it will return `403` 
 
 ```http-request deny if { path_beg,url_dec -i /api/v1/get_ticket }```
 
-
-
+We can bypass this if we added another `/`  to make it like this `//api/v1/get_ticket`
+or based on this : `https://www.cvedetails.com/cve/CVE-2023-45539/`
+we can just add a fragment # (encoded) `/api/v1/get_ticket#`
+both will work, After getting the JWT, We can that we have a role `guest` let's forge it to `Administrator`
+<br></br>
+<img src="https://github.com/Yazan03/CTF-Writeups2024/blob/main/HTB_cyber_apocalypse/WEB/images/6.PNG">
