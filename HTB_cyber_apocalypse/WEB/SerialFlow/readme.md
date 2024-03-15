@@ -17,7 +17,7 @@ app.config.from_object(__name__)
 
 Session(app)
 ```
-The `memcached` is used for caching data 
+The `memcached` is used for caching data.
 
 
 In `requqirements.txt` we can see it uses `pylibmc==1.6.3` also `Flask-Session==0.4.0`
@@ -30,10 +30,10 @@ Werkzeug==2.2.2
 ```
 After reading the sessions.py from `https://github.com/pallets-eco/flask-session/blob/main/src/flask_session/sessions.py`
 
-I found that it use the `cPickle` which is vulnerable to deserialization attack, After a bit of googling about memcached and cPickle i came accross this as POC of the exploit
+I found that it used the `cPickle` which is vulnerable to deserialization attacks, After a bit of googling about memcached and cPickle, I came across this as the POC of the exploit.
 `https://btlfry.gitlab.io/notes/posts/memcached-command-injections-at-pylibmc/`
 
-I tried to wget my webhook and it worked !, GOT RCE
+I tried to wget my webhook, and it worked! , GOT RCE
 <br></br>
 ```py
 from requests import *
