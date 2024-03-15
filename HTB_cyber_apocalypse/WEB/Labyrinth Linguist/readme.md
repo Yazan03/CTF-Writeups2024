@@ -10,6 +10,7 @@ org.apache.velocity.Template t = new org.apache.velocity.Template();
 Reference: 
 `https://iwconnect.com/apache-velocity-server-side-template-injection/`
 <br></br>
+Exploit :
 ```py
 from requests import *
 import re
