@@ -8,9 +8,9 @@ JWT_SECRET_KEY = jwk.JWK.generate(kty='RSA', size=2048)
 ```
 In requirements.txt we can see that it's using an old version of JWT `python_jwt==3.3.3`, Which is vulnerable :L according to this : `https://github.com/advisories/GHSA-5p8v-58qm-c7fp`
 
-
+<br></br>
 <img src="https://github.com/Yazan03/CTF-Writeups2024/blob/main/HTB_cyber_apocalypse/WEB/images/4.PNG">
-
+<br></br>
 Let's open the Site now 
-
+<br></br>
 <img src="https://github.com/Yazan03/CTF-Writeups2024/blob/main/HTB_cyber_apocalypse/WEB/images/5.PNG">
