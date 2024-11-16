@@ -1,5 +1,5 @@
-##**Key Confusion Attack with JWT and Pug SSTI**
-
+**Key Confusion Attack with JWT and Pug SSTI**
+---
 ## **Description**
 People are always complaining that there's not enough cat pictures on the internet.. Something must be done!!
 <br></br>
