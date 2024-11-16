@@ -3,7 +3,7 @@
 ## **Description**
 People are always complaining that there's not enough cat pictures on the internet.. Something must be done!!
 <br></br>
-
+---
 1. Identifying the Attack Surface
 While reading through the source code, I discovered that the RS256 JWT keys were publicly accessible via the /jwks.json route. 
 <img src="https://github.com/Yazan03/CTF-Writeups2024/blob/main/1337UP%20CTF/Club%20Cat/images/Capture.PNG">
