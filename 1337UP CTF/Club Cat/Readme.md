@@ -74,5 +74,6 @@ eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6IiN7Nyo3fSJ9.lsLiuUrEkr81Z7
 <img src="https://github.com/Yazan03/CTF-Writeups2024/blob/main/1337UP%20CTF/Club%20Cat/images/6.PNG">
 <br></br>
 It worked!, now let's see where the flag is, From the Dockerfile we can see that the flag is randomized and it's in the root directory.
+<br></br>
 <img src="https://github.com/Yazan03/CTF-Writeups2024/blob/main/1337UP%20CTF/Club%20Cat/images/7.PNG">
 <br></br>
