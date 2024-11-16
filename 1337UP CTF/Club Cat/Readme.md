@@ -58,6 +58,8 @@ with open("public_key.pem", "wb") as pem_file:
 
 print("Public RSA key saved to public_key.pem")
 ```
-
-
+<br></br>
+Let's create an account and take the jwt token
+<img src="https://github.com/Yazan03/CTF-Writeups2024/blob/main/1337UP%20CTF/Club%20Cat/images/3.PNG">
+<img src="https://github.com/Yazan03/CTF-Writeups2024/blob/main/1337UP%20CTF/Club%20Cat/images/4.PNG">
 
