@@ -13,3 +13,51 @@ https://portswigger.net/web-security/jwt/algorithm-confusion
 Reading more the source code found a route called /cats and there pug ssti in the username that been taken from the jwt token
 <br></br>
 <img src="https://github.com/Yazan03/CTF-Writeups2024/blob/main/1337UP%20CTF/Club%20Cat/images/2.PNG">
+<br></br>
+https://book.hacktricks.xyz/pentesting-web/ssti-server-side-template-injection#pugjs-nodejs 
+<br></br>
+<br></br>
+So After things been clear to as the attak surface will be:
+1- Getting the RS256 Keys 
+2- Make a key confsion attack to inject what we want in the username 
+3- Pug SSti
+4- get RCE and read the flag
+<br></br>
+<br></br>
+I used a script to convert the rs256 into .pem file so i can use it with jwt_tool : 
+```py
+import base64
+from cryptography.hazmat.primitives.asymmetric import rsa
+from cryptography.hazmat.primitives import serialization
+from cryptography.hazmat.primitives.asymmetric.rsa import RSAPublicNumbers
+
+
+jwk = {
+    "kty": "RSA",
+    "n": "w4oPEx-448XQWH_OtSWN8L0NUDU-rv1jMiL0s4clcuyVYvgpSV7FsvAG65EnEhXaYpYeMf1GMmUxBcyQOpathL1zf3_Jk5IsbhEmuUZ28Ccd8l2gOcURVFA3j4qMt34OlPqzf9nXBvljntTuZcQzYcGEtM7Sd9sSmg8uVx8f1WOmUFCaqtC26HdjBMnNfhnLKY9iPxFPGcE8qa8SsrnRfT5HJjSRu_JmGlYCrFSof5p_E0WPyCUbAV5rfgTm2CewF7vIP1neI5jwlcm22X2t8opUrLbrJYoWFeYZOY_Wr9vZb23xmmgo98OAc5icsvzqYODQLCxw4h9IxGEmMZ-Hdw",
+    "e": "AQAB"
+}
+
+
+n = int.from_bytes(base64.urlsafe_b64decode(jwk["n"] + "=="), byteorder='big')
+e = int.from_bytes(base64.urlsafe_b64decode(jwk["e"] + "=="), byteorder='big')
+
+
+public_numbers = RSAPublicNumbers(e, n)
+public_key = public_numbers.public_key()
+
+
+pem = public_key.public_bytes(
+    encoding=serialization.Encoding.PEM,
+    format=serialization.PublicFormat.SubjectPublicKeyInfo
+)
+
+# Save to a .pem file
+with open("public_key.pem", "wb") as pem_file:
+    pem_file.write(pem)
+
+print("Public RSA key saved to public_key.pem")
+```
+
+
+
