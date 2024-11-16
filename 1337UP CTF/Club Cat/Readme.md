@@ -5,7 +5,6 @@ People are always complaining that there's not enough cat pictures on the intern
 Reading the source code foud that JWT Rs256 keys are publicly accesable on /jwks.json route.
 <img src="https://github.com/Yazan03/CTF-Writeups2024/blob/main/1337UP%20CTF/Club%20Cat/images/Capture.PNG">
 <br></br>
-
 So We can make a key confusion attack as descriped here
 <br></br>
 https://portswigger.net/web-security/jwt/algorithm-confusion
@@ -16,14 +15,13 @@ Reading more the source code found a route called /cats and there pug ssti in th
 <br></br>
 https://book.hacktricks.xyz/pentesting-web/ssti-server-side-template-injection#pugjs-nodejs 
 <br></br>
-<br></br>
 So After things been clear to as the attak surface will be:
 1- Getting the RS256 Keys 
 2- Make a key confsion attack to inject what we want in the username 
 3- Pug SSti
 4- get RCE and read the flag
 <br></br>
-<br></br>
+
 I used a script to convert the rs256 into .pem file so i can use it with jwt_tool : 
 ```py
 import base64
@@ -71,7 +69,7 @@ dwIDAQAB
 -----END PUBLIC KEY-----
 ```
 <br></br>
-<br></br>
+
 Let's create an account and take the jwt token
 <img src="https://github.com/Yazan03/CTF-Writeups2024/blob/main/1337UP%20CTF/Club%20Cat/images/3.PNG">
 <img src="https://github.com/Yazan03/CTF-Writeups2024/blob/main/1337UP%20CTF/Club%20Cat/images/4.PNG">
